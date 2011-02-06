@@ -1,0 +1,24 @@
+/**
+ * Image Index Preview for Symphony
+ *
+ * @author: Nils Hörrmann, http://nilshoerrmann.de
+ * @source: http://github.com/nilshoerrmann/subsectionmanager
+ */
+ 
+td {
+	vertical-align: middle;
+}
+
+td.field-upload img {
+	float: left;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 0 12px 0 0;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;	
+}
+
+.selecting td.field-upload img, .selected td.field-upload img {
+	border-color: #ABE;
+}
