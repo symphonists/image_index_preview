@@ -8,7 +8,7 @@
 	 * @source: http://github.com/nilshoerrmann/image_index_preview
 	 */
 	$(document).ready(function() {
-		$('table td.field-upload a').each(function() {
+		$('table td[class*="upload"]').addClass('upload').find('a').each(function() {
 			var link = $(this),
 				href = link.attr('href'),
 				file = href.replace(Symphony.Context.get('root') + '/workspace/', '');
