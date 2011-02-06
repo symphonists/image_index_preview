@@ -9,14 +9,23 @@
 	 */
 	$(document).ready(function() {
 		$('table td.field-upload a').each(function() {
-			var link = $(this).text(''),
+			var link = $(this),
 				href = link.attr('href'),
 				file = href.replace(Symphony.Context.get('root') + '/workspace/', '');
 
-			// Append preview	
-			$('<img />', {
-				src: Symphony.Context.get('root') + '/image/2/40/40/5/' + file
-			}).prependTo(link);
+			// Append preview
+			if(file) {
+				if(file.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
+					
+					// Remove file name
+					link.text('');
+					
+					// Add image
+					$('<img />', {
+						src: Symphony.Context.get('root') + '/image/2/40/40/5/' + file
+					}).prependTo(link);
+				}
+			}
 		});
 	});
 		
