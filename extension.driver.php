@@ -35,7 +35,7 @@
 			$callback = Symphony::Engine()->getPageCallback();
 
 			// Append styles for publish area
-			if($callback['driver'] == 'publish' && $callback['context']['page'] == 'index') {
+			if($callback['driver'] == 'publish' && (($callback['context']['page'] == 'index') || ($callback['context']['page'] == 'edit'))) {
 				Administration::instance()->Page->addScriptToHead(URL . '/extensions/image_index_preview/assets/image_index_preview.publish.js', 100, false);
 				Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/image_index_preview/assets/image_index_preview.publish.css', 'screen', 101, false);
 			}
