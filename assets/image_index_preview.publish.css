@@ -22,3 +22,5 @@ td.upload img {
 .selecting td.upload img, .selected td.upload img {
 	border-color: #ABE;
 }
+
+.upload a { float: none; max-width: 100%; }

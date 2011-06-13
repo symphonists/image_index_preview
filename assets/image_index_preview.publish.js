@@ -2,15 +2,16 @@
 (function($) {
 	
 	/**
-	 * This plugin adds image preview to the publish index.
+	 * This plugin adds image preview to the publish pages.
 	 *
 	 * @author: Nils Hörrmann, post@nilshoerrmann.de
 	 * @source: http://github.com/nilshoerrmann/image_index_preview
 	 */
 	$(document).ready(function() {
-		$('table td[class*="upload"]').addClass('upload').find('a').each(function() {
+		$('table td[class*="upload"], fieldset div[class*="upload"]').addClass('upload').find('a').each(function() {
 			var link = $(this),
 				href = link.attr('href'),
+                size = (Symphony.Context.get('env')['page'] == 'index' ? '40/40' : '0/150')
 				file = href.replace(Symphony.Context.get('root') + '/workspace/', '');
 
 			// Append preview
@@ -22,7 +23,7 @@
 					
 					// Add image
 					$('<img />', {
-						src: Symphony.Context.get('root') + '/image/2/40/40/5/' + file
+						src: Symphony.Context.get('root') + '/image/2/' + size + '/5/' + file
 					}).prependTo(link);
 				}
 			}
