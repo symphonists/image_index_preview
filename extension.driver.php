@@ -5,8 +5,8 @@
 		public function about() {
 			return array(
 				'name' => 'Image Index Preview',
-				'version' => '1.0',
-				'release-date' => '2011-01-27',
+				'version' => '1.2',
+				'release-date' => '2011-06-13',
 				'author' => array(
 					'name' => 'Nils Hörrmann',
 					'website' => 'http://nilshoerrmann.de',
