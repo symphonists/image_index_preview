@@ -5,8 +5,8 @@
 		public function about() {
 			return array(
 				'name' => 'Image Index Preview',
-				'version' => '1.2',
-				'release-date' => '2011-06-13',
+				'version' => '1.2.1',
+				'release-date' => '2011-06-14',
 				'author' => array(
 					'name' => 'Nils Hörrmann',
 					'website' => 'http://nilshoerrmann.de',
@@ -19,7 +19,7 @@
 		public function getSubscribedDelegates(){
 			return array(
 				array(
-					'page' => '/administration/',
+					'page' => '/backend/',
 					'delegate' => 'AdminPagePreGenerate',
 					'callback' => '__appendAssets'
 				)
