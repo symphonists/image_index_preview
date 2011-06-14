@@ -13,7 +13,7 @@ Display an image preview on the publish index.
 
 **Version 1.2.1**
 
-- Change delegate from `/administration/` ot `/backend/` (code name "Michael")
+- Changed delegate from `/administration/` to `/backend/` (code name "Michael")
 
 **Version 1.2**
 
