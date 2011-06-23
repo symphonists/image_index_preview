@@ -24,3 +24,7 @@ td.upload img {
 }
 
 .upload a { float: none; max-width: 100%; }
+
+span.frame img {
+	max-width: 100%;
+}
