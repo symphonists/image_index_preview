@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="image_index_preview" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
 	<name>Image Index Preview</name>
-	<description>Displays a small image preview for the core upload field on publish index and publish edit pages.</description>
+	<description>Displays a small image preview for upload fields on publish index and publish edit pages.</description>
 	<repo type="github">https://github.com/symphonists/image_index_preview</repo>
 	<types>
 		<type>Interface</type>
