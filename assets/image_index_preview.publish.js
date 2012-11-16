@@ -1,33 +1,54 @@
-
 (function($) {
-	
+
 	/**
 	 * This plugin adds image preview to the publish pages.
 	 *
-	 * @author: Nils Hörrmann, post@nilshoerrmann.de
-	 * @source: http://github.com/nilshoerrmann/image_index_preview
+	 * @author: Symphony Community
+	 * @source: https://github.com/symphonists/image_index_preview
 	 */
-	$(document).ready(function() {
-		$('table td[class*="upload"], fieldset div[class*="upload"]').addClass('upload').find('a').each(function() {
-			var link = $(this),
-				href = link.attr('href'),
-                size = (Symphony.Context.get('env')['page'] == 'index' ? '40/40' : '0/150')
-				file = href.replace(Symphony.Context.get('root') + '/workspace/', '');
 
-			// Append preview
-			if(file) {
-				if(file.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
-					
-					// Remove file name
+	$(function() {
+
+		var root, page, link, path, file, size;
+
+		root = Symphony.Context.get('root');
+		page = Symphony.Context.get('env')['page'];
+
+		$('table td[class*="upload"] a, fieldset div[class*="upload"] a', '#contents').each(function() {
+
+			link = $(this);
+
+			if (page == 'index') {
+
+				path = link.data('path');
+				size = '40/40';
+
+			} else {
+
+				path = link.attr('href');
+				size = '0/150';
+			}
+
+			if (path) {
+
+				file = path.replace(root + '/workspace/', '');
+
+				if (file.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
+
+					// remove file name
+
 					link.text('');
-					
-					// Add image
+
+					// add preview
+
 					$('<img />', {
-						src: Symphony.Context.get('root') + '/image/2/' + size + '/5/' + file
+
+						src: root + '/image/2/' + size + '/5/' + file
+
 					}).prependTo(link);
 				}
 			}
 		});
 	});
-		
-})(jQuery.noConflict());
+
+})(jQuery);
