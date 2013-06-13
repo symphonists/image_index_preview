@@ -1,54 +1,77 @@
-(function($) {
+jQuery(document).ready(function($) {
 
-	/**
-	 * This plugin adds image preview to the publish pages.
-	 *
-	 * @author: Symphony Community
-	 * @source: https://github.com/symphonists/image_index_preview
-	 */
+	 /**
+		* This plugin adds image preview to the publish pages.
+		*
+		* @author: Symphony Community
+		* @source: https://github.com/symphonists/image_index_preview
+		*/
 
-	$(function() {
+	 var root, page, link, path, file, size;
 
-		var root, page, link, path, file, size;
+	 var defaultSize = 140;
 
-		root = Symphony.Context.get('root');
-		page = Symphony.Context.get('env')['page'];
+	 root = Symphony.Context.get('root');
+	 page = Symphony.Context.get('env')['page'];
 
-		$('table td[class*="upload"] a, fieldset div[class*="upload"] a', '#contents').each(function() {
+	 function getDimensions(src) {
+			img = document.createElement('img');
+			img.src = src;
+
+			img.onload = function() {
+				 return { width: this.width, height: this.height };
+			};
+
+			var ratio;
+			var w = img.onload().width;
+			var h = img.onload().height;
+
+			if (h > w) {
+				 ratio = w / h;
+				 size = parseInt(defaultSize * ratio) + '/' + 0;
+			} else {
+				 ratio = h / w;
+				 size = 0 + '/' + parseInt(defaultSize * ratio);
+			}
+
+			return { s: size, r: ratio, h: h, w: w };
+	 }
+
+	 $('table td[class*="upload"] a, fieldset div[class*="upload"] a', '#contents').each(function() {
 
 			link = $(this);
 
 			if (page == 'index') {
 
-				path = link.data('path');
-				size = '40/40';
+				 path = link.data('path');
+				 filename = link.text();
+				 file = path.replace(root, '').replace('/workspace/','') + '/' + filename;
+				 attr = getDimensions(path + '/' + filename);
 
 			} else {
 
-				path = link.attr('href');
-				size = '0/150';
+				 path = link.attr('href');
+				 file = path.replace(root, '').replace('/workspace/','');
+
+				 attr = getDimensions(path);
 			}
 
 			if (path) {
 
-				file = path.replace(root + '/workspace/', '');
+				 if (file.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
 
-				if (file.match(/\.(?:bmp|gif|jpe?g|png)$/i)) {
+						// remove file name
 
-					// remove file name
+						link.text('');
 
-					link.text('');
+						// add preview
 
-					// add preview
+						$('<img />', {
 
-					$('<img />', {
+							 src: root + '/image/1/' + attr.s + '/' + file
 
-						src: root + '/image/2/' + size + '/5/' + file
-
-					}).prependTo(link);
-				}
+						}).prependTo(link);
+				 }
 			}
-		});
-	});
-
-})(jQuery);
+	 });
+});
