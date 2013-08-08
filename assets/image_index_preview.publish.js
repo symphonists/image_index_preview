@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
 
 			// add preview
 			$('<img />', {
-				src: this.src.replace('workspace','image/1/'+size);
+				src: this.src.replace('workspace','image/1/'+size)
 			}).prependTo(link);
 		}
 	 }
