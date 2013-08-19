@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 				 ratio = h / w;
 				 size = 0 + '/' + parseInt(defaultSize * ratio);
 			}
-			console.log(size);
+
 			// add preview
 			$('<img />', {
 				src: root + '/image/1/' + size + '/' + external + '/' + file
