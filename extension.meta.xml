@@ -13,7 +13,7 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.4" date="2013-07-07" min="2.3.3">
+		<release version="1.4" date="2013-07-07" min="2.3.3" max="2.4.x">
 			- Compatibility with Symphony 2.3.3
 			- Thumbnail size is now proportional to the image dimensions
 		</release>
