@@ -13,6 +13,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.4.2" date="2015-05-28" min="2.3.5" max="2.6.x">
+			- Fixes image paths on index pages (Issue #20)
+		</release>
 		<release version="1.4.1" date="2015-01-15" min="2.3.5" max="2.6.x">
 			- Compatibility with Symphony 2.6beta2 (tested in 2.3.5)
 		</release>
