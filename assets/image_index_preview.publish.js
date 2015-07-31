@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
 				if (link.data('path') != null) {
 					path = link.data('path');
 					filename = link.text();
-					file = path.replace(root, '').replace('/workspace','') + filename;
+					file = (path.replace(root,'').replace('/workspace','') + '/' + filename).substring(1);
 					full_filepath = root + path + '/' + filename;
 				}
 			}
