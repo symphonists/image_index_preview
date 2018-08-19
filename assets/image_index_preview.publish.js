@@ -1,11 +1,12 @@
 jQuery(document).ready(function($) {
 
 	/**
-		* This plugin adds image preview to the publish pages.
-		*
-		* @author: Symphony Community
-		* @source: https://github.com/symphonists/image_index_preview
-		*/
+	 * This plugin adds image preview to the publish pages.
+	 *
+	 * @author: Symphony Community
+	 * @source: https://github.com/symphonists/image_index_preview
+	 */
+
 	var root, page, link, path, file, size, external;
 	var defaultSize = 140;
 

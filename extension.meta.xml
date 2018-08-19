@@ -3,6 +3,8 @@
 	<name>Image Index Preview</name>
 	<description>Displays a small image preview for upload fields on publish index and publish edit pages.</description>
 	<repo type="github">https://github.com/symphonists/image_index_preview</repo>
+	<url type="issues">https://github.com/symphonists/image_index_preview/issues</url>
+	<url type="discuss">https://www.getsymphony.com/discuss/thread/60955/</url>
 	<types>
 		<type>Interface</type>
 	</types>
@@ -13,6 +15,10 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.4.3" date="2018-08-19" min="2.3.5" max="2.x.x">
+			- Update compatibility information
+			- Add issues- and forum-links
+		</release>
 		<release version="1.4.2" date="2015-05-28" min="2.3.5" max="2.6.x">
 			- Fixes image paths on index pages (Issue #20)
 		</release>
