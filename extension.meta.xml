@@ -15,7 +15,7 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.4.3" date="2018-08-19" min="2.3.5" max="2.x.x">
+		<release version="1.4.3" date="2018-09-22" min="2.3.5" max="2.x.x">
 			- Update compatibility information
 			- Add issues- and forum-links
 		</release>
